@@ -40,7 +40,7 @@ export const Home = () => {
 								<p>Terraine:</p>
 							</div>
 							<div className="button-footer">
-							<button className="btn btn-outline-primary">Learn More</button>
+							<button className="btn btn-outline-primary">Learn More!</button>
 							<button className="btn btn-outline-warning">C</button>
 							</div>
 						</div>
