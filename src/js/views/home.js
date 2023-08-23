@@ -13,7 +13,7 @@ export const Home = () => {
 						return (
 							<div className="my-card">
 								<div>
-									<img src={"https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg"} alt="" />
+									<img src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`} alt="" />
 								</div>
 								<div className="body-text">
 									<p><strong>Nombre:</strong> {item.properties.name}</p>
@@ -34,23 +34,23 @@ export const Home = () => {
 			<div className="container mt-5">
 				<h1 className="text-danger">Planets</h1>
 				<div className="my-carousel">
-					{store.planets.map((item)=>{
-						return(
+					{store.planets.map((item) => {
+						return (
 							<div className="my-card">
-							<div>
 								<div>
-									<img src="https://picsum.photos/200/300/" alt="" />
-								</div>
-								<div className="body-text">
-									<p>Population:{item.properties.population}</p>
-									<p>Terrain:{item.properties.terrain}</p>
-								</div>
-								<div className="button-footer">
-									<button className="btn btn-outline-primary">Learn More!</button>
-									<button className="btn btn-outline-warning">C</button>
+									<div>
+										<img src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} alt="" />
+									</div>
+									<div className="body-text">
+										<p><strong>Population:</strong> {item.properties.population}</p>
+										<p><strong>Terrain:</strong> {item.properties.terrain}</p>
+									</div>
+									<div className="button-footer">
+										<button className="btn btn-outline-primary">Learn More!</button>
+										<button className="btn btn-outline-warning">C</button>
+									</div>
 								</div>
 							</div>
-						</div>
 						)
 					})}
 				</div>

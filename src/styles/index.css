@@ -2,21 +2,24 @@
     General Styles
 */
 .my-card{
-    min-width: 200px;
+    min-width: 300px;
     margin-right: 5px;
     border: 1px solid gray;
 }
+
 .my-card > div >img {
     width: 100%;
 }
+
 .body-text{
     padding: 15px;
 }
+
 .button-footer{
     display: flex;
     justify-content: space-between;
-    padding: 8%;
 }
+
 .my-carousel{
     display: flex;
     overflow-x: scroll;
