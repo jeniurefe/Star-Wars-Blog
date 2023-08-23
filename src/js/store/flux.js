@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: [],
+			planets: [],
 			urlBase: "https://www.swapi.tech/api/",
 			demo: [
 				{
@@ -59,8 +60,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 					).catch((err) => {
 						console.log(err)
 					})
+			},
+			getPlanets: () => {
+				fetch(`${getStore().urlBase}/planets`)
+					.then((response) => response.json())
+					.then((data) => {
+						for (let item of data.results) {
+							fetch(item.url)
+								.then((response) => response.json())
+								.then((data) => {
+									setStore({
+										planets: [...getStore().planets, data.result]
+									})
+								}).catch((err) => {
+									console.log(err)
+								})
+						}
+					}
+					).catch((err) => {
+						console.log(err)
+					})
 			}
-		}
+
+		},
 	};
 };
 

@@ -13,13 +13,13 @@ export const Home = () => {
 						return (
 							<div className="my-card">
 								<div>
-									<img src="https://picsum.photos/200/300/" alt="" />
+									<img src={"https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg"} alt="" />
 								</div>
 								<div className="body-text">
-									<p>Nombre</p>
-									<p>Gender</p>
-									<p>Hair Color</p>
-									<p>Eye Color</p>
+									<p><strong>Nombre:</strong> {item.properties.name}</p>
+									<p><strong>Gender:</strong>{item.properties.gender}</p>
+									<p><strong>Hair Color:</strong>{item.properties.hair_color}</p>
+									<p><strong>Eye Color:</strong>{item.properties.eye_color}</p>
 								</div>
 								<div className="button-footer">
 									<button className="btn btn-outline-primary">Learn More</button>
@@ -34,21 +34,25 @@ export const Home = () => {
 			<div className="container mt-5">
 				<h1 className="text-danger">Planets</h1>
 				<div className="my-carousel">
-					<div className="my-card">
-						<div>
+					{store.planets.map((item)=>{
+						return(
+							<div className="my-card">
 							<div>
-								<img src="https://picsum.photos/200/300/" alt="" />
-							</div>
-							<div className="body-text">
-								<p>Population</p>
-								<p>Terraine:</p>
-							</div>
-							<div className="button-footer">
-								<button className="btn btn-outline-primary">Learn More!</button>
-								<button className="btn btn-outline-warning">C</button>
+								<div>
+									<img src="https://picsum.photos/200/300/" alt="" />
+								</div>
+								<div className="body-text">
+									<p>Population:{item.properties.population}</p>
+									<p>Terrain:{item.properties.terrain}</p>
+								</div>
+								<div className="button-footer">
+									<button className="btn btn-outline-primary">Learn More!</button>
+									<button className="btn btn-outline-warning">C</button>
+								</div>
 							</div>
 						</div>
-					</div>
+						)
+					})}
 				</div>
 			</div>
 
