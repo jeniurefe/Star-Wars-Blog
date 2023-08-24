@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
+import {Link} from 'react-router-dom'
 
 export const Home = () => {
 	const { store } = useContext(Context)
@@ -17,12 +18,12 @@ export const Home = () => {
 								</div>
 								<div className="body-text">
 									<p><strong>Nombre:</strong> {item.properties.name}</p>
-									<p><strong>Gender:</strong>{item.properties.gender}</p>
-									<p><strong>Hair Color:</strong>{item.properties.hair_color}</p>
-									<p><strong>Eye Color:</strong>{item.properties.eye_color}</p>
+									<p><strong>Gender:</strong> {item.properties.gender}</p>
+									<p><strong>Hair Color:</strong> {item.properties.hair_color}</p>
+									<p><strong>Eye Color:</strong> {item.properties.eye_color}</p>
 								</div>
 								<div className="button-footer">
-									<button className="btn btn-outline-primary">Learn More</button>
+									<Link to={`/people/${item._id}`}  className="btn btn-outline-primary">Learn More</Link>
 									<button className="btn btn-outline-warning">C</button>
 								</div>
 							</div>
@@ -38,23 +39,22 @@ export const Home = () => {
 						return (
 							<div className="my-card">
 								<div>
-									<div>
-										<img src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} alt="" />
-									</div>
-									<div className="body-text">
-										<p><strong>Population:</strong> {item.properties.population}</p>
-										<p><strong>Terrain:</strong> {item.properties.terrain}</p>
-									</div>
-									<div className="button-footer">
-										<button className="btn btn-outline-primary">Learn More!</button>
-										<button className="btn btn-outline-warning">C</button>
-									</div>
+									<img src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} alt="" />
+								</div>
+								<div className="body-text">
+									<p><strong>Population: </strong> {item.properties.population}</p>
+									<p><strong>Terrain: </strong> {item.properties.terrain}</p>
+								</div>
+								<div className="button-footer">
+									<Link to={`/planets/${item._id}`} className="btn btn-outline-primary">Learn More</Link>
+									<button className="btn btn-outline-warning">C</button>
 								</div>
 							</div>
 						)
 					})}
 				</div>
 			</div>
+
 
 		</>
 	)

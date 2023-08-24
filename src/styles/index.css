@@ -18,6 +18,7 @@
 .button-footer{
     display: flex;
     justify-content: space-between;
+    padding: 8%;
 }
 
 .my-carousel{
