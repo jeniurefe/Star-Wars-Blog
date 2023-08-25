@@ -4,7 +4,8 @@ import {useParams} from 'react-router-dom'
 
 const Detail =() =>{
     const params = useParams()
-    const [search, setSearch] = useState([])
+    const [search, setSearch] = useState({})
+    console.log(params)
 
 
     const {store} = useContext(Context)
@@ -12,7 +13,7 @@ const Detail =() =>{
 
     const details =() =>{
 
-        if(params.nature == "characters"){
+        if(params.nature == "people"){
             const searchFind = store.characters.find((item)=> item._id == params.id )
             setSearch(searchFind)
         }else{
@@ -23,7 +24,7 @@ const Detail =() =>{
 
     useEffect(()=>{
         details()
-    }, [])
+    }, [store.characters])
 
     return(
         <>

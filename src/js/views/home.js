@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import {Link} from 'react-router-dom'
 
 export const Home = () => {
-	const { store } = useContext(Context)
+	const { store, actions } = useContext(Context)
 	return (
 		<>
 			<div className="container">
@@ -12,7 +12,7 @@ export const Home = () => {
 				<div className="my-carousel">
 					{store.characters.map((item) => {
 						return (
-							<div className="my-card">
+							<div key={item._id} className="my-card">
 								<div>
 									<img src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`} alt="" />
 								</div>
@@ -24,7 +24,7 @@ export const Home = () => {
 								</div>
 								<div className="button-footer">
 									<Link to={`/people/${item._id}`}  className="btn btn-outline-primary">Learn More</Link>
-									<button className="btn btn-outline-warning">C</button>
+									<button className="btn btn-outline-warning"  onClick={()=> actions.addFavorite(item)}>C</button>
 								</div>
 							</div>
 						)
@@ -37,7 +37,7 @@ export const Home = () => {
 				<div className="my-carousel">
 					{store.planets.map((item) => {
 						return (
-							<div className="my-card">
+							<div key={item._id}	className="my-card">
 								<div>
 									<img src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} alt="" />
 								</div>
@@ -47,7 +47,7 @@ export const Home = () => {
 								</div>
 								<div className="button-footer">
 									<Link to={`/planets/${item._id}`} className="btn btn-outline-primary">Learn More</Link>
-									<button className="btn btn-outline-warning">C</button>
+									<button className="btn btn-outline-warning" onClick={()=> actions.addFavorite(item)}>C</button>
 								</div>
 							</div>
 						)

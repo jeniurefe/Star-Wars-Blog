@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			planets: [],
 			urlBase: "https://www.swapi.tech/api/",
+			favorites: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -80,6 +81,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					).catch((err) => {
 						console.log(err)
 					})
+			},
+			addFavorite: (fav) => {
+				let store = getStore()
+				let favExist = store.favorites.some((item) => fav._id == item._id)
+				if(favExist) {
+					let newFavorite= store.favorites.filter((item) => fav._id != item._id)
+					setStore({ 
+						favorites: newFavorite
+					})
+				}else{
+					setStore({
+						favorites: [...store.favorites,fav]
+					})
+				}
 			}
 
 		},
