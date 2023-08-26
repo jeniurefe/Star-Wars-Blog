@@ -24,7 +24,7 @@ export const Home = () => {
 								</div>
 								<div className="button-footer">
 									<Link to={`/people/${item._id}`}  className="btn btn-outline-primary">Learn More</Link>
-									<button className="btn btn-outline-warning"  onClick={()=> actions.addFavorite(item)}>C</button>
+									<button className="btn btn-outline-warning"  onClick={()=> actions.addFavorite(item)}><i class="fa-solid fa-heart"></i></button>
 								</div>
 							</div>
 						)
@@ -47,7 +47,7 @@ export const Home = () => {
 								</div>
 								<div className="button-footer">
 									<Link to={`/planets/${item._id}`} className="btn btn-outline-primary">Learn More</Link>
-									<button className="btn btn-outline-warning" onClick={()=> actions.addFavorite(item)}>C</button>
+									<button className="btn btn-outline-warning" onClick={()=> actions.addFavorite(item)}><i class="fa-solid fa-heart"></i></button>
 								</div>
 							</div>
 						)

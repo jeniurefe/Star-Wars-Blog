@@ -8,8 +8,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light mb-3">
 			<div className="container">
 				<Link to="/">
-					<span className="navbar-brand h1">StarWars
-					</span>
+					<span className="navbar-brand h1">StarWars</span>
 				</Link>
 				<div className="ml-auto">
 					<div className="dropdown">
