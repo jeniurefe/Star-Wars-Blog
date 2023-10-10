@@ -85,14 +85,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFavorite: (fav) => {
 				let store = getStore()
 				let favExist = store.favorites.some((item) => fav._id == item._id)
-				if(favExist) {
-					let newFavorite= store.favorites.filter((item) => fav._id != item._id)
-					setStore({ 
+				if (favExist) {
+					let newFavorite = store.favorites.filter((item) => fav._id != item._id)
+					setStore({
 						favorites: newFavorite
 					})
-				}else{
+				} else {
 					setStore({
-						favorites: [...store.favorites,fav]
+						favorites: [...store.favorites, fav]
 					})
 				}
 			}

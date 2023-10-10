@@ -23,7 +23,7 @@ export const Home = () => {
 									<p><strong>Eye Color:</strong> {item.properties.eye_color}</p>
 								</div>
 								<div className="button-footer">
-									<Link to={`/people/${item._id}`}  className="btn btn-outline-primary">Learn More</Link>
+									<Link to={`/characters/${item._id}`}  className="btn btn-outline-primary">Learn More</Link>
 									<button className="btn btn-outline-warning"  onClick={()=> actions.addFavorite(item)}><i class="fa-solid fa-heart"></i></button>
 								</div>
 							</div>
