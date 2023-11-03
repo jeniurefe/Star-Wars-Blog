@@ -1,10 +1,22 @@
 /* 
     General Styles
 */
+.fondo{
+    background-image: url(https://free4kwallpapers.com/uploads/originals/2019/11/21/star-wars-wallpaper.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    opacity: 7px;
+}
+.texto{
+    background-color: rgb(94, 111, 126);
+    opacity: 2px;
+}
 .my-card{
     min-width: 300px;
     margin-right: 5px;
     border: 1px solid gray;
+    background-color: white;
 }
 
 .my-card > div >img {

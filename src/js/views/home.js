@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
 	const { store, actions } = useContext(Context)
 	return (
-		<>
+		<> <div className="fondo">
 			<div className="container">
-				<h1 className="text-danger">Characters</h1>
+				<h1 className="text-dark">Characters</h1>
 				<div className="my-carousel">
 					{store.characters.map((item) => {
 						return (
@@ -23,8 +23,8 @@ export const Home = () => {
 									<p><strong>Eye Color:</strong> {item.properties.eye_color}</p>
 								</div>
 								<div className="button-footer">
-									<Link to={`/characters/${item._id}`}  className="btn btn-outline-primary">Learn More</Link>
-									<button className="btn btn-outline-warning"  onClick={()=> actions.addFavorite(item)}><i class="fa-solid fa-heart"></i></button>
+									<Link to={`/characters/${item._id}`} className="btn btn-outline-primary">Learn More</Link>
+									<button className="btn btn-outline-warning" onClick={() => actions.addFavorite(item)}><i class="fa-solid fa-heart"></i></button>
 								</div>
 							</div>
 						)
@@ -33,11 +33,11 @@ export const Home = () => {
 			</div>
 
 			<div className="container mt-5">
-				<h1 className="text-danger">Planets</h1>
+				<h1 className="text-dark">Planets</h1>
 				<div className="my-carousel">
 					{store.planets.map((item) => {
 						return (
-							<div key={item._id}	className="my-card">
+							<div key={item._id} className="my-card">
 								<div>
 									<img src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} alt="" />
 								</div>
@@ -47,14 +47,14 @@ export const Home = () => {
 								</div>
 								<div className="button-footer">
 									<Link to={`/planets/${item._id}`} className="btn btn-outline-primary">Learn More</Link>
-									<button className="btn btn-outline-warning" onClick={()=> actions.addFavorite(item)}><i class="fa-solid fa-heart"></i></button>
+									<button className="btn btn-outline-warning" onClick={() => actions.addFavorite(item)}><i class="fa-solid fa-heart"></i></button>
 								</div>
 							</div>
 						)
 					})}
 				</div>
 			</div>
-
+		</div>
 
 		</>
 	)

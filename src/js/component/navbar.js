@@ -5,15 +5,15 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			
+		<nav className="navbar navbar-dark bg-dark mb-3">
+
 			<div className="container">
 				<span className="navbar-brand ms-5 mb-0 h1">
-			<a href="/"><img src="https://i.ibb.co/khNRBYC/star-wars-logo.png" alt="star-wars-logo" border="0"/></a>
-			</span>
+					<a href="/"><img src="https://i.ibb.co/khNRBYC/star-wars-logo.png" alt="star-wars-logo" border="0" /></a>
+				</span>
 				<div className="ml-auto">
 					<div className="dropdown">
-						<a className="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+						<a className="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 							Favorites {store.favorites.length}
 						</a>
 
